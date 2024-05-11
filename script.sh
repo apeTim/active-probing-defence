@@ -14,6 +14,6 @@ echo "server {
             try_files '' /index.html =404;
         }
 }" > /etc/nginx/sites-available/default 
-echo curl https://raw.githubusercontent.com/apeTim/active-probing-defence/main/index-$((1 + $RANDOM % 4)).html > /var/www/html/index.html
+curl https://raw.githubusercontent.com/apeTim/active-probing-defence/main/index-$((1 + $RANDOM % 4)).html > /var/www/html/index.html
 certbot --nginx -d "$domain" -d "www.$domain" --register-unsafely-without-email
 systemctl restart nginx
