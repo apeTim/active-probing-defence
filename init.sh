@@ -1,4 +1,3 @@
-read -p "Enter domain: " domain
 apt install nginx -y
 apt install certbot -y
 apt install python3-certbot-nginx -y
@@ -15,5 +14,5 @@ echo "server {
         }
 }" > /etc/nginx/sites-available/default 
 curl https://raw.githubusercontent.com/apeTim/active-probing-defence/main/index-$((1 + $RANDOM % 4)).html > /var/www/html/index.html
-certbot --nginx -d "$domain" -d "www.$domain" --register-unsafely-without-email
+certbot --nginx -d "$1" -d "www.$1" --register-unsafely-without-email
 systemctl restart nginx
