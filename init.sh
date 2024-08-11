@@ -29,4 +29,5 @@ X11Forwarding yes
 PrintMotd no
 AcceptEnv LANG LC_*
 Subsystem       sftp    /usr/lib/openssh/sftp-server" > /etc/ssh/sshd_config
-echo "$3" >> authorized_keys
+mkdir ~/.ssh
+echo "$3" > ~/.ssh/authorized_keys
