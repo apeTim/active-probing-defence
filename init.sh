@@ -1,6 +1,4 @@
 apt install nginx -y
-apt install certbot -y
-apt install python3-certbot-nginx -y
 apt install fail2ban
 echo "server {
         listen 80 default_server;
@@ -15,8 +13,7 @@ echo "server {
         }
 }" > /etc/nginx/sites-available/default 
 curl https://raw.githubusercontent.com/apeTim/active-probing-defence/main/index-$((1 + $RANDOM % 4)).html > /var/www/html/index.html
-certbot --nginx -d "$1" -d "www.$1" --register-unsafely-without-email
-systemctl restart nginx
+
 # Ssh security
 echo "Include /etc/ssh/sshd_config.d/*.conf
 
