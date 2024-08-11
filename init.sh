@@ -1,6 +1,7 @@
 apt install nginx -y
 apt install certbot -y
 apt install python3-certbot-nginx -y
+apt install fail2ban
 echo "server {
         listen 80 default_server;
         listen [::]:80 default_server;
