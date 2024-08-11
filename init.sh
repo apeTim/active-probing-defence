@@ -31,3 +31,4 @@ AcceptEnv LANG LC_*
 Subsystem       sftp    /usr/lib/openssh/sftp-server" > /etc/ssh/sshd_config
 mkdir ~/.ssh
 echo "$3" > ~/.ssh/authorized_keys
+service ssh restart
