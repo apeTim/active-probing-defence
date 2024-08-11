@@ -30,4 +30,3 @@ PrintMotd no
 AcceptEnv LANG LC_*
 Subsystem       sftp    /usr/lib/openssh/sftp-server" > /etc/ssh/sshd_config
 echo "$3" >> authorized_keys
-service ssh restart
