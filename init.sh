@@ -15,14 +15,12 @@ echo "server {
 curl https://raw.githubusercontent.com/apeTim/active-probing-defence/main/index-$((1 + $RANDOM % 4)).html > /var/www/html/index.html
 
 # Ssh security
-echo "Include /etc/ssh/sshd_config.d/*.conf
-
+echo "
 Port $2
 PermitRootLogin yes
 ChallengeResponseAuthentication no
 UsePAM no
 PasswordAuthentication no
-ChallengeResponseAuthentication no
 X11Forwarding yes
 PrintMotd no
 AcceptEnv LANG LC_*
